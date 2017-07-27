@@ -14,7 +14,7 @@ data = JSON.parse(response.body)
 # 将抓过来的数据转成 ruby 格式，并存入 data 这个变量。
 
 data.each do |m|
-  existing_ticker = Ticker.find_by_ticker_id( m["id"])
+  existing_ticker = Ticker.find_by_ticker_id( m["id"] )
   # ticker_id 是 ticker 这个 model 的一个栏位，记录聚合 API 的城市 id
 
 # 先确定该城市是否存在，如果不存在，则新建
@@ -24,7 +24,6 @@ data.each do |m|
     # 将抓到的数据写入 ticker 这个 model
 
   end
-
 end
 
 puts "Total: #{Ticker.count} tickers"
